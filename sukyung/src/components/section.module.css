@@ -1,0 +1,147 @@
+.inner_intro {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  margin-bottom: 30px;
+}
+.wrap_txt {
+  padding: 120px 0;
+}
+.wrap_txt h3 {
+  font-size: 55px;
+}
+.wrap_txt p {
+  padding: 20px 0 50px;
+}
+.wrap_txt button {
+  padding: 10px 30px;
+  border-radius: 20px;
+  font-weight: 900;
+}
+
+.wrap_search {
+  position: relative;
+}
+.wrap_search::before {
+  content: '';
+  z-index: 5;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  display: block;
+  width: 100%;
+  height: 50%;
+  background-color: #eff1f7;
+}
+.box_search {
+  z-index: 10;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #3b3054;
+  background-image: url('/src/assets/bg-shorten-desktop.svg');
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+.wrap_search input {
+  width: calc(100% - 150px);
+  height: 40px;
+  padding: 5px 15px;
+  border-radius: 8px;
+  border: none;
+  box-sizing: border-box;
+}
+.wrap_search button {
+  margin-left: 10px;
+  padding: 12px 35px;
+  border-radius: 5px;
+}
+
+.wrap_statistics {
+  padding: 100px 0;
+  background-color: #eff1f7;
+  text-align: center;
+}
+.wrap_statistics h3 {
+  font-size: 35px;
+}
+.desc_statistics {
+  margin: 20px 0 100px;
+  line-height: 2;
+}
+.wrap_statistics ul {
+  position: relative;
+  display: flex;
+  flex-grow: 0;
+  text-align: left;
+}
+.wrap_statistics ul::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 30%;
+  width: 100%;
+  height: 10px;
+  background-color: #2acfcf;
+}
+.wrap_statistics li {
+  z-index: 5;
+  position: relative;
+  height: 250px;
+  background-color: #fff;
+}
+.wrap_statistics li + li {
+  margin-left: 25px;
+}
+.wrap_statistics li:nth-child(2) {
+  margin-top: 40px;
+}
+.wrap_statistics li:last-child {
+  margin-top: 80px;
+}
+.item_statistics {
+  padding: 20px;
+}
+.item_statistics strong {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+.item_statistics p {
+  padding: 20px 0;
+  line-height: 1.5;
+}
+.box_icon {
+  width: 60px;
+  height: 60px;
+  margin-top: -60px;
+  margin-bottom: 30px;
+  padding: 10px;
+  background-color: #3b3054;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 80px;
+}
+.box_icon img {
+  width: 40px;
+}
+
+.wrap_banner {
+  height: 250px;
+  padding: 70px 0;
+  box-sizing: border-box;
+  background-color: #3b3054;
+  background-image: url('/src/assets/bg-boost-desktop.svg');
+  text-align: center;
+  color: #fff;
+}
+.wrap_banner strong {
+  display: block;
+  margin-bottom: 30px;
+  font-size: 40px;
+}
+.wrap_banner button {
+  padding: 12px 30px;
+  font-weight: 900;
+  border-radius: 20px;
+}

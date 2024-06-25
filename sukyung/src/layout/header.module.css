@@ -30,16 +30,10 @@
   margin-left: auto;
 }
 .box_util button {
-  padding: 8px 15px;
   font-size: 16px;
   font-weight: 900;
 }
 .btn_login {
   color: #9e9aa7;
   margin-right: 15px;
-}
-.btn_sign {
-  background-color: #2acfcf;
-  border-radius: 15px;
-  color: #fff;
 }
