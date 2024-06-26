@@ -7,7 +7,15 @@
 body {
   font-size: 18px;
 }
-
+h1,
+h2,
+h3,
+strong {
+  font-weight: 900;
+}
+p {
+  color: #9e9aa7;
+}
 .poppins-medium {
   font-family: 'Poppins', sans-serif;
   font-weight: 500;

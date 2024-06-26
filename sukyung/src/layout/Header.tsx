@@ -27,7 +27,7 @@ export default function Header() {
         <button type="button" className={classes.btn_login}>
           Login
         </button>
-        <button type="button" className={classes.btn_sign}>
+        <button type="button" className="btn_bg">
           Sign Up
         </button>
       </div>
