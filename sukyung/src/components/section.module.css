@@ -52,10 +52,20 @@
   border: none;
   box-sizing: border-box;
 }
+.type_error {
+  outline: 1px solid #f46262;
+}
 .wrap_search button {
   margin-left: 10px;
   padding: 12px 35px;
   border-radius: 5px;
+}
+.txt_alert {
+  padding-top: 10px;
+  color: #f46262;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 14px;
 }
 
 .wrap_statistics {
