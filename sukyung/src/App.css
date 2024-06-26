@@ -20,3 +20,6 @@
   border-radius: 15px;
   color: #fff;
 }
+.btn_bg:hover {
+  background-color: #9be3e2;
+}

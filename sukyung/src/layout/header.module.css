@@ -22,6 +22,9 @@
 .nav_main li {
   margin-right: 15px;
 }
+.nav_main li:hover {
+  color: #232127;
+}
 .nav_main a {
   display: block;
   cursor: pointer;

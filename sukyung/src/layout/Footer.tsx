@@ -16,7 +16,7 @@ export default function Footer() {
                   <a href="">Link Shortening</a>
                 </li>
                 <li>
-                  <a href="">Branded Link</a>s
+                  <a href="">Branded Links</a>
                 </li>
                 <li>
                   <a href="">Analytics</a>
