@@ -3,40 +3,60 @@ import classes from './footer.module.css'
 export default function Footer() {
   return (
     <footer className={classes.wrap_footer}>
-      <div className="inner_cont">
-        <a href="#">
+      <div className={`inner_cont ${classes.inner_footer}`}>
+        <a href="">
           <img src="/src/assets/logo.svg" alt="Shortly" />
         </a>
-        <nav>
-          <ul>
+        <nav className={classes.nav_footer}>
+          <ul className={classes.list_depth1}>
             <li>
-              Features
-              <ul>
-                <li>Link Shortening</li>
-                <li>Branded Links</li>
-                <li>Analytics</li>
+              <a href="">Features</a>
+              <ul className={classes.list_depth2}>
+                <li>
+                  <a href="">Link Shortening</a>
+                </li>
+                <li>
+                  <a href="">Branded Link</a>s
+                </li>
+                <li>
+                  <a href="">Analytics</a>
+                </li>
               </ul>
             </li>
             <li>
-              Resources
-              <ul>
-                <li>Blog</li>
-                <li>Developers</li>
-                <li>Support</li>
+              <a href="">Resources</a>
+              <ul className={classes.list_depth2}>
+                <li>
+                  <a href="">Blog</a>
+                </li>
+                <li>
+                  <a href="">Developers</a>
+                </li>
+                <li>
+                  <a href="">Support</a>
+                </li>
               </ul>
             </li>
             <li>
-              Company
-              <ul>
-                <li>About</li>
-                <li>Our Team</li>
-                <li>Careers</li>
-                <li>Contact</li>
+              <a href="">Company</a>
+              <ul className={classes.list_depth2}>
+                <li>
+                  <a href="">About</a>
+                </li>
+                <li>
+                  <a href="">Our Team</a>
+                </li>
+                <li>
+                  <a href="">Careers</a>
+                </li>
+                <li>
+                  <a href="">Contact</a>
+                </li>
               </ul>
             </li>
           </ul>
         </nav>
-        <div className="box_sns">
+        <div className={classes.box_sns}>
           <strong className="screen_out">sns list</strong>
           <ul>
             <li>

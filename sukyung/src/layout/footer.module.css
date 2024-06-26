@@ -1,3 +1,29 @@
 .wrap_footer {
+  padding: 100px 0;
   background-color: #232127;
+  color: #fff;
+}
+.inner_footer {
+  display: flex;
+  justify-content: space-between;
+}
+.nav_footer {
+  margin-left: auto;
+}
+.list_depth1 {
+  display: flex;
+}
+.list_depth2 {
+  margin-right: 80px;
+  padding-top: 20px;
+  color: #9e9aa7;
+}
+.list_depth2 li {
+  margin-top: 15px;
+}
+.box_sns ul {
+  display: flex;
+}
+.box_sns li {
+  margin-right: 20px;
 }
