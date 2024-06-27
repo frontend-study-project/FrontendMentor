@@ -21,6 +21,26 @@ export default function SectionSearch() {
     setBlankError(false)
 
     const encodeURL = encodeURIComponent(linkInput.replace(/\s/g, ''))
+    // console.log(encodeURL)
+
+    try {
+      fetch('/api/v1/shorten', {
+        method: 'POST',
+        headers: {
+          Accept: 'application / json',
+        },
+        body: JSON.stringify({
+          url: encodeURL,
+        }),
+      })
+        .then((response) => response.json())
+        .then((result) => {
+          console.log(result)
+          if (!result.ok) throw new Error('Something wrong')
+        })
+    } catch (error) {
+      // console.log(error)
+    }
   }
 
   return (
