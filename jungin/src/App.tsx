@@ -1,11 +1,14 @@
-import './App.css'
+import './App.css';
+import { Header } from './components/Header';
+import { Map } from './components/Map';
 
 function App() {
   return (
     <>
-      <div className="text-xl text-blue-500">테스트</div>
+      <Header />
+      <Map />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
