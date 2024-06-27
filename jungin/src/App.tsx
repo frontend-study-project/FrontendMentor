@@ -4,10 +4,10 @@ import { Map } from './components/Map';
 
 function App() {
   return (
-    <>
+    <div className="h-screen font-rubik">
       <Header />
       <Map />
-    </>
+    </div>
   );
 }
 
