@@ -24,9 +24,40 @@ body {
     margin-top: 50px;
 }
 
+.searchbar_wrap input {
+    padding: 15px;
+    border: none;
+    width: 250px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.searchbar {
+    position: relative;
+}
+
+.searchbar span {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.searchbar ul {
+    position: absolute;
+    background-color: #fff;
+    padding: 20px;
+    top: 105%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
 .filter_wrap {
     width: 100%;
     margin: 50px 0;
+}
+
+.searchbar ul li:not(:last-of-type) {
+    padding-bottom: 10px;
 }
 
 .filter_wrap ul {
