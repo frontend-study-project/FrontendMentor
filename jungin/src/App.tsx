@@ -4,7 +4,7 @@ import { Map } from './components/Map';
 
 function App() {
   return (
-    <div className="h-screen font-rubik">
+    <div className="flex flex-col h-screen font-rubik">
       <Header />
       <Map />
     </div>
