@@ -1,0 +1,107 @@
+body {
+    background-color: #f0f0f0;
+}
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    height: 56px;
+    padding: 0 60px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    max-width: calc(1440px - 120px);
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.searchbar_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.searchbar_wrap input {
+    padding: 15px;
+    border: none;
+    width: 250px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+}
+
+.searchbar {
+    position: relative;
+}
+
+.searchbar span {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.searchbar ul {
+    position: absolute;
+    background-color: #fff;
+    padding: 20px;
+    top: 105%;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.filter_wrap {
+    width: 100%;
+    margin: 50px 0;
+}
+
+.searchbar ul li:not(:last-of-type) {
+    padding-bottom: 10px;
+}
+
+.filter_wrap ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.filter_wrap ul li {
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.filter_wrap ul img {
+    width: 100%;
+    height: auto;
+}
+
+.filter_wrap .txt_wrap {
+    padding: 30px;
+}
+
+.filter_wrap .txt_wrap h2 {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.filter_wrap .txt_wrap p {
+    margin-top: 10px;
+}
+
+.filter_wrap .txt_wrap p:first-of-type {
+    margin-top: 20px;
+}
+
+.filter_wrap .txt_wrap p span:first-of-type {
+    font-weight: 600;
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.filter_wrap .txt_wrap p span:nth-of-type(2) {
+    font-weight: 300;
+}
+
