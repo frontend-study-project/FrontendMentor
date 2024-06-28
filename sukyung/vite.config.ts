@@ -9,8 +9,7 @@ export default defineConfig({
       '/api': {
         target: 'https://cleanuri.com',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
-        secure: true,
+        secure: false,
         ws: true,
       },
     },

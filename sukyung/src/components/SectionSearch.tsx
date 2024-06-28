@@ -9,7 +9,7 @@ export default function SectionSearch() {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setLinkInput(e.target.value)
   }
-  const handleLinkSubmit = (e: React.FormEvent) => {
+  const handleLinkSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     if (linkInput === '') {
@@ -19,28 +19,25 @@ export default function SectionSearch() {
     }
 
     setBlankError(false)
+    const URL = linkInput.replace(/\s/g, '')
 
-    const encodeURL = encodeURIComponent(linkInput.replace(/\s/g, ''))
-    // console.log(encodeURL)
+    const data = new URLSearchParams()
+    data.append('url', URL)
 
-    try {
-      fetch('/api/v1/shorten', {
-        method: 'POST',
-        headers: {
-          Accept: 'application / json',
-        },
-        body: JSON.stringify({
-          url: encodeURL,
-        }),
+    fetch('/api/v1/shorten', {
+      method: 'POST',
+      body: data,
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        console.log(result.result_url)
+        setLinkInput(result.result_url)
+        // if (!result.ok) throw new Error('Something wrong')
+        // setLinkInput(result.result_url)
       })
-        .then((response) => response.json())
-        .then((result) => {
-          console.log(result)
-          if (!result.ok) throw new Error('Something wrong')
-        })
-    } catch (error) {
-      // console.log(error)
-    }
   }
 
   return (
