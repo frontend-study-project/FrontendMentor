@@ -1,4 +1,4 @@
-import classes from './section.module.css'
+import classes from './SectionStatistics.module.css'
 
 export default function SectionStatistics() {
   return (

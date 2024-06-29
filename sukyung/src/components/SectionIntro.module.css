@@ -1,0 +1,20 @@
+.inner_intro {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  margin-bottom: 30px;
+}
+.wrap_txt {
+  padding: 120px 0;
+}
+.wrap_txt h3 {
+  font-size: 55px;
+}
+.wrap_txt p {
+  padding: 20px 0 50px;
+}
+.wrap_txt button {
+  padding: 10px 30px;
+  border-radius: 20px;
+  font-weight: 900;
+}

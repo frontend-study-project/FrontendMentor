@@ -1,4 +1,4 @@
-import classes from './section.module.css'
+import classes from './Banner.module.css'
 
 export default function Banner() {
   return (

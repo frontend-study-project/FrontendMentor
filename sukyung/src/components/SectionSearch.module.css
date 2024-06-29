@@ -1,0 +1,72 @@
+.wrap_search {
+  position: relative;
+  background-color: #eff1f7;
+}
+.inner_search::before {
+  content: '';
+  z-index: 5;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 50px;
+  background-color: #fff;
+}
+.box_search {
+  z-index: 10;
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px 30px 40px;
+  background-color: #3b3054;
+  background-image: url('/src/assets/bg-shorten-desktop.svg');
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+.wrap_search input {
+  width: calc(100% - 150px);
+  height: 40px;
+  padding: 5px 15px;
+  border-radius: 8px;
+  border: none;
+  box-sizing: border-box;
+}
+.type_error {
+  outline: 1px solid #f46262;
+}
+.wrap_search button {
+  margin-left: 10px;
+  padding: 12px 35px;
+  border-radius: 5px;
+}
+.txt_alert {
+  padding-top: 10px;
+  color: #f46262;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 14px;
+}
+.inner_result {
+}
+.item_result {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  line-height: 40px;
+}
+.txt_before {
+  overflow: hidden;
+  display: box;
+  width: 500px;
+  height: 40px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.txt_after {
+  margin-left: auto;
+  color: #2acfcf;
+}

@@ -1,14 +1,21 @@
 import { useRef, useState } from 'react'
-import classes from './section.module.css'
+import classes from './SectionSearch.module.css'
+
+interface resultListType {
+  before: string
+  after: string
+}
 
 export default function SectionSearch() {
   const linkRef = useRef<HTMLInputElement>(null)
   const [linkInput, setLinkInput] = useState('')
   const [blankError, setBlankError] = useState(false)
+  const [linkList, setLinkList] = useState<resultListType[]>([])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setLinkInput(e.target.value)
   }
+
   const handleLinkSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
@@ -19,6 +26,7 @@ export default function SectionSearch() {
     }
 
     setBlankError(false)
+
     const URL = linkInput.replace(/\s/g, '')
 
     const data = new URLSearchParams()
@@ -34,15 +42,23 @@ export default function SectionSearch() {
       .then((response) => response.json())
       .then((result) => {
         console.log(result.result_url)
-        setLinkInput(result.result_url)
+        setLinkList((prev) => [
+          ...prev,
+          {
+            before: URL,
+            after: result.result_url,
+          },
+        ])
         // if (!result.ok) throw new Error('Something wrong')
-        // setLinkInput(result.result_url)
+      })
+      .then(() => {
+        linkRef.current.value = ''
       })
   }
 
   return (
     <div className={classes.wrap_search}>
-      <div className="inner_cont">
+      <div className={`inner_cont ${classes.inner_search}`}>
         <form className={classes.box_search} onSubmit={handleLinkSubmit}>
           <div>
             <label htmlFor="link" className="screen_out">
@@ -54,6 +70,17 @@ export default function SectionSearch() {
           {blankError && <p className={classes.txt_alert}>Please add a link</p>}
         </form>
       </div>
+      <ul className={`inner_cont ${classes.inner_result}`}>
+        {linkList.map((item) => (
+          <li key={item.after.slice(-6, -1)} className={classes.item_result}>
+            <span className={classes.txt_before}>{item.before}</span>
+            <span className={classes.txt_after}>{item.after}</span>
+            <button type="button" className="btn_bg">
+              Copy
+            </button>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }

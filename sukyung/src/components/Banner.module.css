@@ -1,0 +1,19 @@
+.wrap_banner {
+  height: 250px;
+  padding: 70px 0;
+  box-sizing: border-box;
+  background-color: #3b3054;
+  background-image: url('/src/assets/bg-boost-desktop.svg');
+  text-align: center;
+  color: #fff;
+}
+.wrap_banner strong {
+  display: block;
+  margin-bottom: 30px;
+  font-size: 40px;
+}
+.wrap_banner button {
+  padding: 12px 30px;
+  font-weight: 900;
+  border-radius: 20px;
+}
