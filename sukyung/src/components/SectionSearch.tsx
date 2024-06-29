@@ -71,8 +71,8 @@ export default function SectionSearch() {
         </form>
       </div>
       <ul className={`inner_cont ${classes.inner_result}`}>
-        {linkList.map((item) => (
-          <li key={item.after.slice(-6, -1)} className={classes.item_result}>
+        {linkList.map((item, idx) => (
+          <li key={item.after.slice(-6, -1) + idx} className={classes.item_result}>
             <span className={classes.txt_before}>{item.before}</span>
             <span className={classes.txt_after}>{item.after}</span>
             <button type="button" className="btn_bg">
