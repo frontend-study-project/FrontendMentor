@@ -6,7 +6,7 @@ declare global {
   }
 }
 
-export const Map = () => {
+export const Map = ({ data }) => {
   useEffect(() => {
     var container = document.getElementById('map');
     var options = {
