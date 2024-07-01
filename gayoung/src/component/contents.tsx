@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { getCountryData } from "../api";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Contents = () => {
   const { data, isLoading, isError } = useQuery({
@@ -9,12 +10,12 @@ const Contents = () => {
   });
 
   const [input, setInput] = useState("");
-  const [filteredData, setFilteredData] = useState([]);
+  const [searchedData, setSearchedData] = useState([]);
+  const [selectedRegion, setSelectedRegion] = useState("Filter by Region");
 
-  // Update filteredData when data changes
   useEffect(() => {
     if (data) {
-      setFilteredData(data);
+      setSearchedData(data);
     }
   }, [data]);
 
@@ -22,12 +23,17 @@ const Contents = () => {
     setInput(event.target.value);
   };
 
-  const handleClick = () => {
-    // Filter data based on input value
+  const handleSearchClick = () => {
     const filtered = data.filter(item =>
         item.name.toLowerCase().includes(input.toLowerCase())
     );
-    setFilteredData(filtered);
+    setSearchedData(filtered);
+  };
+
+  const handleFilterClick = (region) => {
+    setSelectedRegion(region);
+    const filtered = data.filter(item => item.region === region);
+    setSearchedData(filtered);
   };
 
   if (isLoading) {
@@ -50,29 +56,38 @@ const Contents = () => {
                 value={input}
                 onChange={handleInputChange}
             />
-            <button type="button" onClick={handleClick}>Search</button>
+            <button type="button" onClick={handleSearchClick}>Search</button>
           </div>
           <div className="searchbar">
-            <span>Filter by Region</span>
+            <span>{selectedRegion}</span>
             <ul>
               {filteredRegion.map((item) => (
-                  <li key={item}>{item}</li>
+                  <li
+                      key={item}
+                      data-value={item}
+                      onClick={() => handleFilterClick(item)}
+                      style={{cursor: 'pointer', fontWeight: selectedRegion === item ? 'bold' : 'normal'}}
+                  >
+                    {item}
+                  </li>
               ))}
             </ul>
           </div>
         </div>
         <div className="filter_wrap">
           <ul>
-            {filteredData?.map((item) => (
-                <li key={item.name}>
-                  <img src={item.flags.png} alt={item.name}/>
-                  <div className="txt_wrap">
-                    <h2>{item.name}</h2>
-                    <p><span>Population:</span><span>{item.population}</span></p>
-                    <p><span>Region:</span><span>{item.region}</span></p>
-                    <p><span>Capital:</span><span>{item.capital}</span></p>
-                  </div>
-                </li>
+            {searchedData?.map((item) => (
+                <Link key={item.name} to={`/country/${item.name}`}>
+                  <li>
+                    <img src={item.flags.png} alt={item.name}/>
+                    <div className="txt_wrap">
+                      <h2>{item.name}</h2>
+                      <p><span>Population:</span><span>{item.population}</span></p>
+                      <p><span>Region:</span><span>{item.region}</span></p>
+                      <p><span>Capital:</span><span>{item.capital}</span></p>
+                    </div>
+                  </li>
+                </Link>
             ))}
           </ul>
         </div>
