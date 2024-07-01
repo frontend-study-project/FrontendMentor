@@ -1,30 +1,35 @@
 import { useState } from "react";
 import arrow from '../assets/images/icon-arrow.svg';
+import { useDispatch } from "react-redux";
+import { setData } from "../redux/dataSlice";
 
-const SearchBar = ({ setData }) => {
-  const [input, setInput] = useState("192.212.174.101");
+const SearchBar = () => {
+  const dispatch = useDispatch();
 
-  const handleSubmit = async (e) => {
+  const [input, setInput] = useState("");
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInput(e.target.value);
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${import.meta.env.VITE_IPIFY_API_KEY}&ipAddress=${input}`);
     const data = await response.json();
-    setData({
+    const dataObj = {
       ip: data.ip,
       country: data.location.country,
       region: data.location.region,
       city: data.location.city,
       timezone: data.location.timezone,
-      isp: data.isp || "-",
+      isp: data.isp,
       latitude: data.location.lat,
       longitude: data.location.lng
-    });
-    console.log(data);
+    };
+    dispatch(setData(dataObj));
+    console.log(dataObj);
   }
-
-  const handleInputChange = (e) => {
-    setInput(e.target.value);
-  };
 
   return (
     <form className="flex w-10/12 rounded-2xl overflow-hidden sm:w-[50%]" onSubmit={handleSubmit}>

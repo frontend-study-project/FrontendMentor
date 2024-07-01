@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 declare global {
   interface Window {
@@ -6,22 +7,25 @@ declare global {
   }
 }
 
-export const Map = ({ data }) => {
+export const Map = () => {
+  const data = useSelector(state => state.data.data);
+
   useEffect(() => {
-    var container = document.getElementById('map');
-    var options = {
-      center: new window.kakao.maps.LatLng(37.365264512305174, 127.10676860117488),
+    const [lat, long] = [data.latitude, data.longitude];
+    const container = document.getElementById('map');
+    const options = {
+      center: new window.kakao.maps.LatLng(lat, long),
       level: 3
     };
 
-    var map = new window.kakao.maps.Map(container, options);
-    var markerPosition = new window.kakao.maps.LatLng(37.365264512305174, 127.10676860117488);
-    var marker = new window.kakao.maps.Marker({
+    const map = new window.kakao.maps.Map(container, options);
+    const markerPosition = new window.kakao.maps.LatLng(lat, long);
+    const marker = new window.kakao.maps.Marker({
       position: markerPosition
     });
     marker.setMap(map);
 
-  }, [])
+  }, [data])
 
   return (
     <div id="map" className="w-full grow"></div>
