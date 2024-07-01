@@ -19,7 +19,7 @@
   width: 100%;
   margin: 0 auto;
   padding: 30px 30px 40px;
-  background-color: #3b3054;
+  background-color: var(--color-dark-violet);
   background-image: url('/src/assets/bg-shorten-desktop.svg');
   border-radius: 8px;
   box-sizing: border-box;
@@ -33,7 +33,7 @@
   box-sizing: border-box;
 }
 .type_error {
-  outline: 1px solid #f46262;
+  outline: 1px solid var(--color-red);
 }
 .wrap_search button {
   margin-left: 10px;
@@ -42,7 +42,7 @@
 }
 .txt_alert {
   padding-top: 10px;
-  color: #f46262;
+  color: var(--color-red);
   font-weight: 400;
   font-style: italic;
   font-size: 14px;
@@ -67,14 +67,14 @@
 .txt_after {
   margin-left: auto;
   margin-right: 10px;
-  color: #2acfcf;
+  color: var(--color-cyan);
 }
 .btn_copy {
   min-width: 120px;
 }
 .active {
-  background-color: #3b3054;
+  background-color: var(--color-dark-violet);
 }
 .active:hover {
-  background-color: #3b3054;
+  background-color: var(--color-dark-violet);
 }

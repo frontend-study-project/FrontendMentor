@@ -1,6 +1,6 @@
 .wrap_footer {
   padding: 100px 0;
-  background-color: #232127;
+  background-color: var(--color-very-dark-violet);
   color: #fff;
 }
 .inner_footer {
@@ -14,7 +14,7 @@
   margin-left: auto;
 }
 .nav_footer li a:hover {
-  color: #2acfcf;
+  color: var(--color-cyan);
 }
 .list_depth1 {
   display: flex;
@@ -22,7 +22,7 @@
 .list_depth2 {
   margin-right: 80px;
   padding-top: 20px;
-  color: #9e9aa7;
+  color: var(--color-grayish-violet);
 }
 .list_depth2 li {
   margin-top: 15px;
@@ -34,5 +34,5 @@
   margin-right: 20px;
 }
 .box_sns li:hover path {
-  fill: #2acfcf;
+  fill: var(--color-cyan);
 }

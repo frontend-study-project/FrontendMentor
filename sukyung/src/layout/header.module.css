@@ -17,13 +17,13 @@
   display: flex;
   align-items: center;
   margin-left: 30px;
-  color: #9e9aa7;
+  color: var(--color-grayish-violet);
 }
 .nav_main li {
   margin-right: 15px;
 }
 .nav_main li:hover {
-  color: #232127;
+  color: var(--color-very-dark-violet);
 }
 .nav_main a {
   display: block;
@@ -37,6 +37,6 @@
   font-weight: 900;
 }
 .btn_login {
-  color: #9e9aa7;
+  color: var(--color-grayish-violet);
   margin-right: 15px;
 }
