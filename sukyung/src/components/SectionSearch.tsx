@@ -98,7 +98,7 @@ export default function SectionSearch() {
           <li key={item.after.slice(-6, -1) + idx} className={classes.item_result}>
             <span className={classes.txt_before}>{item.before}</span>
             <span className={classes.txt_after}>{item.after}</span>
-            <button type="button" className={`btn_bg ${isCopied.idx === idx ? classes.active : ''}`} onClick={() => handleCopyClick(idx)}>
+            <button type="button" className={`btn_bg ${classes.btn_copy} ${isCopied.idx === idx ? classes.active : ''}`} onClick={() => handleCopyClick(idx)}>
               {isCopied.idx === idx ? 'Copied!' : 'Copy'}
             </button>
           </li>
