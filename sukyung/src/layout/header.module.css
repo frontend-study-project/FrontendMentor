@@ -1,5 +1,6 @@
 .head_main {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 100px;
@@ -8,6 +9,14 @@
 }
 .link_logo {
   display: inline-block;
+}
+.btn_menu {
+  display: none;
+}
+.wrap_utils {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 .nav_main {
   height: 100%;
@@ -29,9 +38,6 @@
   display: block;
   cursor: pointer;
 }
-.box_util {
-  margin-left: auto;
-}
 .box_util button {
   font-size: 16px;
   font-weight: 900;
@@ -39,4 +45,43 @@
 .btn_login {
   color: var(--color-grayish-violet);
   margin-right: 15px;
+}
+@media (max-width: 750px) {
+  .btn_menu {
+    position: relative;
+    display: block;
+  }
+  .wrap_utils {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    top: 90px;
+    right: 0;
+    width: calc(100% - 60px);
+    margin: 0 30px;
+    padding: 30px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: var(--color-dark-violet);
+  }
+  .nav_main ul {
+    flex-direction: column;
+    color: #fff;
+    font-size: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .nav_main li {
+    width: 100%;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .box_util button {
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    padding: 15px;
+    font-size: 25px;
+    border-radius: 30px;
+    color: #fff;
+  }
 }

@@ -18,3 +18,25 @@
   border-radius: 20px;
   font-weight: 900;
 }
+@media (max-width: 750px) {
+  .inner_intro {
+    display: block;
+  }
+  .wrap_img img {
+    width: 100%;
+    margin: 0 30px;
+  }
+  .wrap_txt {
+    text-align: center;
+  }
+  .wrap_txt p {
+    font-size: 25px;
+  }
+  .wrap_txt button {
+    width: calc(100% - 100px);
+    padding: 20px 10px;
+    border-radius: 40px;
+    box-sizing: border-box;
+    font-size: 30px;
+  }
+}

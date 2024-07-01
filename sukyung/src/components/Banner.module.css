@@ -17,3 +17,16 @@
   font-weight: 900;
   border-radius: 20px;
 }
+@media (max-width: 750px) {
+  .wrap_banner {
+    background-image: url('/src/assets/bg-boost-mobile.svg');
+  }
+  .wrap_banner strong {
+    font-size: 35px;
+  }
+  .wrap_banner button {
+    padding: 20px 50px;
+    font-size: 25px;
+    border-radius: 40px;
+  }
+}
