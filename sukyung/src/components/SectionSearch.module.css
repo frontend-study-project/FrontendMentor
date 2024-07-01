@@ -47,13 +47,11 @@
   font-style: italic;
   font-size: 14px;
 }
-.inner_result {
-}
 .item_result {
   display: flex;
   align-items: center;
-  padding: 10px;
-  margin-top: 10px;
+  padding: 20px;
+  margin-top: 20px;
   background-color: #fff;
   border-radius: 5px;
   line-height: 40px;
@@ -68,5 +66,12 @@
 }
 .txt_after {
   margin-left: auto;
+  margin-right: 10px;
   color: #2acfcf;
+}
+.active {
+  background-color: #3b3054;
+}
+.active:hover {
+  background-color: #3b3054;
 }
