@@ -78,7 +78,7 @@
 .active:hover {
   background-color: var(--color-dark-violet);
 }
-@media (max-width: 750px) {
+@media (max-width: 1150px) {
   .wrap_search input {
     width: 100%;
     height: 60px;

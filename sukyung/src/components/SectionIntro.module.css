@@ -18,13 +18,12 @@
   border-radius: 20px;
   font-weight: 900;
 }
-@media (max-width: 750px) {
+@media (max-width: 1150px) {
   .inner_intro {
     display: block;
   }
   .wrap_img img {
     width: 100%;
-    margin: 0 30px;
   }
   .wrap_txt {
     text-align: center;

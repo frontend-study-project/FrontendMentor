@@ -46,7 +46,7 @@
   color: var(--color-grayish-violet);
   margin-right: 15px;
 }
-@media (max-width: 750px) {
+@media (max-width: 1150px) {
   .btn_menu {
     position: relative;
     display: block;
