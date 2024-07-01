@@ -7,6 +7,9 @@
   display: flex;
   justify-content: space-between;
 }
+.ico_logo path {
+  fill: #fff;
+}
 .nav_footer {
   margin-left: auto;
 }
@@ -29,4 +32,7 @@
 }
 .box_sns li {
   margin-right: 20px;
+}
+.box_sns li:hover path {
+  fill: #2acfcf;
 }

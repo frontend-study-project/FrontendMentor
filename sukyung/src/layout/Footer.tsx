@@ -1,11 +1,12 @@
 import classes from './footer.module.css'
+import { Logo, IconFacebook, IconTwitter, IconPinterest, IconInstagram } from '../assets/svg'
 
 export default function Footer() {
   return (
     <footer className={classes.wrap_footer}>
       <div className={`inner_cont ${classes.inner_footer}`}>
         <a href="">
-          <img src="/src/assets/logo.svg" alt="Shortly" />
+          <Logo width={121} height={33} className={classes.ico_logo} />
         </a>
         <nav className={classes.nav_footer}>
           <ul className={classes.list_depth1}>
@@ -61,22 +62,22 @@ export default function Footer() {
           <ul>
             <li>
               <a href="" target="_blank">
-                <img src="/src/assets/icon-facebook.svg" alt="facebook" />
+                <IconFacebook width={30} height={30} />
               </a>
             </li>
             <li>
               <a href="" target="_blank">
-                <img src="/src/assets/icon-twitter.svg" alt="twitter" />
+                <IconTwitter width={30} height={30} />
               </a>
             </li>
             <li>
               <a href="" target="_blank">
-                <img src="/src/assets/icon-pinterest.svg" alt="pinterest" />
+                <IconPinterest width={30} height={30} />
               </a>
             </li>
             <li>
               <a href="" target="_blank">
-                <img src="/src/assets/icon-instagram.svg" alt="instagram" />
+                <IconInstagram width={30} height={30} />
               </a>
             </li>
           </ul>
