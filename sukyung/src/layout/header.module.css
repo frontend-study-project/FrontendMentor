@@ -1,0 +1,39 @@
+.head_main {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+.link_logo {
+  display: inline-block;
+}
+.nav_main {
+  height: 100%;
+  line-height: 40px;
+}
+.nav_main ul {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+  color: #9e9aa7;
+}
+.nav_main li {
+  margin-right: 15px;
+}
+.nav_main a {
+  display: block;
+  cursor: pointer;
+}
+.box_util {
+  margin-left: auto;
+}
+.box_util button {
+  font-size: 16px;
+  font-weight: 900;
+}
+.btn_login {
+  color: #9e9aa7;
+  margin-right: 15px;
+}

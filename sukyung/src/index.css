@@ -1,0 +1,29 @@
+:root {
+  font-family: Poppins, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  font-size: 18px;
+}
+h1,
+h2,
+h3,
+strong {
+  font-weight: 900;
+}
+p {
+  color: #9e9aa7;
+}
+.poppins-medium {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
