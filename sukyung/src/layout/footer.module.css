@@ -1,14 +1,20 @@
 .wrap_footer {
   padding: 100px 0;
-  background-color: #232127;
+  background-color: var(--color-very-dark-violet);
   color: #fff;
 }
 .inner_footer {
   display: flex;
   justify-content: space-between;
 }
+.ico_logo path {
+  fill: #fff;
+}
 .nav_footer {
   margin-left: auto;
+}
+.nav_footer li a:hover {
+  color: var(--color-cyan);
 }
 .list_depth1 {
   display: flex;
@@ -16,7 +22,7 @@
 .list_depth2 {
   margin-right: 80px;
   padding-top: 20px;
-  color: #9e9aa7;
+  color: var(--color-grayish-violet);
 }
 .list_depth2 li {
   margin-top: 15px;
@@ -26,4 +32,39 @@
 }
 .box_sns li {
   margin-right: 20px;
+}
+.box_sns li:hover path {
+  fill: var(--color-cyan);
+}
+@media (max-width: 1150px) {
+  .wrap_footer {
+    padding: 50px 0;
+    text-align: center;
+  }
+  .inner_footer {
+    display: block;
+  }
+  .nav_footer {
+    margin: 50px 0 0;
+  }
+  .list_depth1 {
+    display: block;
+  }
+  .list_depth1 > li {
+    padding-top: 50px;
+  }
+  .list_depth2 {
+    margin-right: 0;
+    padding-top: 30px;
+  }
+  .list_depth2 li {
+    margin-top: 25px;
+  }
+  .box_sns ul {
+    justify-content: center;
+    margin-top: 50px;
+  }
+  .box_sns li {
+    margin: 0 10px;
+  }
 }

@@ -1,4 +1,5 @@
-import classes from './section.module.css'
+import classes from './SectionStatistics.module.css'
+import { IconBrandRecognition, IconDetailedRecords, IconFullyCustomizable } from '../../assets/svg'
 
 export default function SectionStatistics() {
   return (
@@ -12,21 +13,21 @@ export default function SectionStatistics() {
         <ul>
           <li className={classes.item_statistics}>
             <div className={classes.box_icon}>
-              <img src="/src/assets/icon-brand-recognition.svg" alt="" />
+              <IconBrandRecognition width={40} height={40} />
             </div>
             <strong>Brand Recognition</strong>
             <p>Boost your brand recognition with each click. Generic links don’t mean a thing. Branded links help instil confidence in your content.</p>
           </li>
           <li className={classes.item_statistics}>
             <div className={classes.box_icon}>
-              <img src="/src/assets/icon-detailed-records.svg" alt="" />
+              <IconDetailedRecords width={40} height={40} />
             </div>
             <strong>Detailed Records</strong>
             <p>Gain insights into who is clicking your links. Knowing when and where people engage with your content helps inform better decisions.</p>
           </li>
           <li className={classes.item_statistics}>
             <div className={classes.box_icon}>
-              <img src="/src/assets/icon-fully-customizable.svg" alt="" />
+              <IconFullyCustomizable width={50} height={50} />
             </div>
             <strong>Fully Customizable</strong>
             <p>Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.</p>

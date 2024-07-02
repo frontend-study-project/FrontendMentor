@@ -1,4 +1,4 @@
-import classes from './section.module.css'
+import classes from './SectionIntro.module.css'
 export default function SectionIntro() {
   return (
     <div>
