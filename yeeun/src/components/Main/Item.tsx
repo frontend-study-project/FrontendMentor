@@ -1,22 +1,50 @@
 import { Link } from 'react-router-dom';
+import Box from '../../styles/Box';
 
 const Item = ({ data }) => {
   return (
-    <ul>
+    <div
+      css={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+        gap: '70px 0',
+      }}
+    >
       {data?.map((c) => (
-        <li key={c.cca3}>
+        <Box variant="countriesList" key={c.cca3} customCss={{ padding: 0 }}>
           <Link to={`/${c.cca3}`}>
-            <img src={c.flags.png} alt={c.flags.alt} />
-            <h2>{c.name.common}</h2>
-            <div>
-              <p>Population: {c.population}</p>
-              <p>Region: {c.region}</p>
-              <p>Capital: {c.capital}</p>
+            <div
+              css={{
+                position: 'relative',
+                paddingBottom: '72.25%',
+              }}
+            >
+              <img
+                src={c.flags.svg}
+                alt={c.flags.alt}
+                css={{
+                  position: 'absolute',
+                  height: '100%',
+                  top: '0',
+                  left: '50%',
+                  transform: 'translatex(-50%)',
+                }}
+              />
+            </div>
+
+            <div css={{ padding: '25px' }}>
+              <h2>{c.name.common}</h2>
+              <div>
+                <p>Population: {c.population}</p>
+                <p>Region: {c.region}</p>
+                <p>Capital: {c.capital}</p>
+              </div>
             </div>
           </Link>
-        </li>
+        </Box>
       ))}
-    </ul>
+    </div>
   );
 };
 
