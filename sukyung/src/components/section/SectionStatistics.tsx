@@ -1,5 +1,5 @@
 import classes from './SectionStatistics.module.css'
-import { IconBrandRecognition, IconDetailedRecords, IconFullyCustomizable } from '../assets/svg'
+import { IconBrandRecognition, IconDetailedRecords, IconFullyCustomizable } from '../../assets/svg'
 
 export default function SectionStatistics() {
   return (

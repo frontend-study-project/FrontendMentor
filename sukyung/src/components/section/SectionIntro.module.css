@@ -4,6 +4,9 @@
   flex-direction: row-reverse;
   margin-bottom: 30px;
 }
+.wrap_img {
+  margin-right: -100px;
+}
 .wrap_txt {
   padding: 120px 0;
 }
