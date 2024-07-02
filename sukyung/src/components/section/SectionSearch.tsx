@@ -2,12 +2,14 @@ import { useRef, useState } from 'react'
 import classes from './SectionSearch.module.css'
 import ShortenResults from '../list/ShortenResults'
 import { ResultListType } from '../../types'
+import Spinner from '../Spinner'
 
 export default function SectionSearch() {
   const linkRef = useRef<HTMLInputElement>(null)
   const [linkInput, setLinkInput] = useState('')
   const [blankError, setBlankError] = useState(false)
   const [linkList, setLinkList] = useState<ResultListType[]>([])
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setLinkInput(e.target.value)
@@ -23,11 +25,9 @@ export default function SectionSearch() {
     }
 
     setBlankError(false)
+    setIsLoading(true)
 
     const URL = linkInput.replace(/\s/g, '')
-
-    const data = new URLSearchParams()
-    data.append('url', URL)
 
     fetch('/api/v1/shorten', {
       method: 'POST',
@@ -56,6 +56,9 @@ export default function SectionSearch() {
         // linkRef.current!.value = '' // 이렇게 간단하게 쓸수도 있음
         setLinkInput('')
       })
+      .finally(() => {
+        setIsLoading(false)
+      })
   }
 
   return (
@@ -72,6 +75,7 @@ export default function SectionSearch() {
           {blankError && <p className={classes.txt_alert}>Please add a link</p>}
         </form>
       </div>
+      {isLoading && <Spinner />}
       <ShortenResults linkList={linkList} />
     </div>
   )
