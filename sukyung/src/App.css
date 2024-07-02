@@ -16,7 +16,10 @@
 }
 .btn_bg {
   padding: 8px 15px;
-  background-color: #2acfcf;
+  background-color: var(--color-cyan);
   border-radius: 15px;
   color: #fff;
+}
+.btn_bg:hover {
+  background-color: #9be3e2;
 }
