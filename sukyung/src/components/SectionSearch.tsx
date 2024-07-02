@@ -43,14 +43,15 @@ export default function SectionSearch() {
 
     fetch('/api/v1/shorten', {
       method: 'POST',
-      body: data,
+      body: JSON.stringify({
+        url: URL,
+      }),
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Type': 'application/json',
       },
     })
       .then((response) => response.json())
       .then((result) => {
-        console.log(result.result_url)
         setLinkList((prev) => [
           ...prev,
           {
@@ -61,12 +62,17 @@ export default function SectionSearch() {
         // if (!result.ok) throw new Error('Something wrong')
       })
       .then(() => {
-        linkRef.current.value = ''
+        if (linkRef.current) {
+          linkRef.current.value = ''
+        }
+        // linkRef.current!.value = '' // 이렇게 간단하게 쓸수도 있음
+        setLinkInput('')
       })
   }
 
   const handleCopyClick = (idx: number) => {
     navigator.clipboard.writeText(linkList[idx].after)
+
     setIsCopied({
       idx: idx,
       tf: true,
