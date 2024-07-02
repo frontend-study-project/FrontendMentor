@@ -60,6 +60,8 @@
 .txt_before {
   overflow: hidden;
   display: box;
+  display: -moz-box;
+  display: -webkit-box;
   width: 500px;
   height: 40px;
   text-overflow: ellipsis;
@@ -93,5 +95,21 @@
   }
   .box_search {
     background-image: url('/src/assets/bg-shorten-mobile.svg');
+  }
+  .item_result {
+    display: block;
+  }
+  .txt_before {
+    width: 100%;
+    border-bottom: 1px solid var(--color-gray);
+  }
+  .txt_after {
+    display: block;
+    width: 100%;
+    margin: 10px 0 0;
+    color: var(--color-cyan);
+  }
+  button.btn_copy {
+    font-size: 20px;
   }
 }
