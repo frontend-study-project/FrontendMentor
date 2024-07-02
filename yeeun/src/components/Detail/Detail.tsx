@@ -1,6 +1,8 @@
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import useApiQuery from '../../hooks/useApi';
+import { css } from '@emotion/react';
 import Error from '../Common/Error';
+import Box from '../../styles/Box';
 
 const Detail = () => {
   const navigate = useNavigate();
@@ -18,8 +20,12 @@ const Detail = () => {
     data?.filter((c) => detailCountry.borders.includes(c.cca3));
 
   return (
-    <>
-      <button onClick={() => navigate(-1)}>Back</button>
+    <div css={{ maxWidth: '1440px', margin: '0 auto', padding: '0 80px' }}>
+      <Box variant="back">
+        <button onClick={() => navigate(-1)} css={{ width: '100%' }}>
+          Back
+        </button>
+      </Box>
       <section>
         <img src={detailCountry.flags.svg} />
         <>
@@ -73,7 +79,7 @@ const Detail = () => {
           </>
         )}
       </section>
-    </>
+    </div>
   );
 };
 
