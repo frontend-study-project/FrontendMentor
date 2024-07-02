@@ -26,9 +26,9 @@ const Detail = () => {
           Back
         </button>
       </Box>
-      <section>
-        <img src={detailCountry.flags.svg} />
-        <>
+      <section css={{ display: 'flex' }}>
+        <img src={detailCountry.flags.svg} css={{ maxWidth: '50%' }} />
+        <div>
           <h2>{detailCountry.name.common}</h2>
           <ul>
             <li>
@@ -65,7 +65,7 @@ const Detail = () => {
               </span>
             </li>
           </ul>
-        </>
+        </div>
         {filterdCountries && (
           <>
             Border Countries:
