@@ -20,6 +20,7 @@ const Box = ({ children, variant, customCss = {} }) => {
         backgroundColor: 'rgba(246, 248, 250)',
         color: 'rgba(36, 41, 47)',
         boxShadow: '0 2px 5px 1px rgba(64, 60, 67, .16)',
+        overflow: 'hidden',
         ...customCss,
       }}
     >
