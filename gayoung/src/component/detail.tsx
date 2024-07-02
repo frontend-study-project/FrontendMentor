@@ -11,10 +11,11 @@ const Detail = () => {
     queryFn: getCountryData
   });
 
+  console.log(params.name)
 
-  const filteredData = data?.filter((ele) => ele.name === params.name );
 
-  console.log(filteredData)
+  const filteredData = data?.filter((ele) => ele.name.replace(/\s+/g, '') === params.name );
+
 
   return(
       <div className="detail_container">
@@ -43,16 +44,18 @@ const Detail = () => {
                     <li><span>Languages:</span>{data.languages.map((item) => item.iso639_1)} </li>
                   </div>
                 </ul>
-                <div className="border_country">
-                  <p>
-                    <span>Border Countries:</span>
-                    <ul>
-                      {
-                        data.borders.map((item) => <li>{item}</li>)
-                      }
-                    </ul>
-                  </p>
-                </div>
+                {data.borders && (
+                    <div className="border_country">
+                      <div>
+                        <span>Border Countries:</span>
+                        <ul>
+                          {
+                            data.borders?.map((item) => <li>{item}</li>)
+                          }
+                        </ul>
+                      </div>
+                    </div>
+                )}
               </div>
             </div>
         ))}

@@ -152,12 +152,12 @@ body {
     margin-top: 100px;
 }
 
-.border_country p {
+.border_country div {
     display: flex;
     align-items: center;
 }
 
-.border_country p span {
+.border_country div span {
     margin-right: 10px;
 }
 

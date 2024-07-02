@@ -77,7 +77,7 @@ const Contents = () => {
         <div className="filter_wrap">
           <ul>
             {searchedData?.map((item) => (
-                <Link key={item.name} to={`/country/${item.name}`}>
+                <Link key={item.name} to={`/country/${item.name.replace(/\s+/g, '')}`}>
                   <li>
                     <img src={item.flags.png} alt={item.name}/>
                     <div className="txt_wrap">
