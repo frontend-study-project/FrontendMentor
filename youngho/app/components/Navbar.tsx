@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 
-import { BeakerIcon, ArchiveBoxIcon } from "@heroicons/react/24/outline";
+import { BeakerIcon, LockClosedIcon } from "@heroicons/react/24/outline";
 
 const Navbar = () => {
   const [menuToggle, setMenuToggle] = useState(false);
@@ -53,7 +53,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button onClick={() => setMenuToggle(!menuToggle)}>
               {menuToggle ? (
-                <ArchiveBoxIcon className="w-6 h-6" />
+                <LockClosedIcon className="w-6 h-6" />
               ) : (
                 <BeakerIcon className="w-6 h-6" />
               )}
