@@ -21,6 +21,7 @@
   padding: 30px 30px 40px;
   background-color: var(--color-dark-violet);
   background-image: url('/src/assets/bg-shorten-desktop.svg');
+  background-repeat: no-repeat;
   border-radius: 8px;
   box-sizing: border-box;
 }

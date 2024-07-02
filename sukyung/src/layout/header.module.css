@@ -84,4 +84,7 @@
     border-radius: 30px;
     color: #fff;
   }
+  .active {
+    display: block;
+  }
 }
