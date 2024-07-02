@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect } from "react";
+import './App.css';
+import { Header } from './components/Header';
+import { Map } from './components/Map';
+import { useDispatch } from "react-redux";
+import { setData } from "./redux/dataSlice";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=${import.meta.env.VITE_IPIFY_API_KEY}`);
+      const data = await response.json();
+      const dataObj = {
+        ip: data.ip,
+        country: data.location.country,
+        region: data.location.region,
+        city: data.location.city,
+        timezone: data.location.timezone,
+        isp: data.isp,
+        latitude: data.location.lat,
+        longitude: data.location.lng
+      };
+      dispatch(setData(dataObj));
+    }
+    fetchData();
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="flex flex-col h-screen font-rubik">
+      <Header />
+      <Map />
+    </div>
+  );
 }
 
-export default App
+export default App;
