@@ -2,6 +2,7 @@ body {
     background-color: #f0f0f0;
 }
 .header {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -103,5 +104,90 @@ body {
 
 .filter_wrap .txt_wrap p span:nth-of-type(2) {
     font-weight: 300;
+}
+
+.detail_container {
+    background-color: white;
+}
+
+.detail_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    padding: 150px 60px;
+    margin: 0 auto;
+}
+
+.detail_wrap > div {
+    flex: 1;
+}
+
+.detail_wrap > div img {
+    width: 100%;
+}
+
+.detail_wrap > div h2 {
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.detail_wrap > div > ul {
+    display: flex;
+    gap: 100px;
+    margin-top: 20px;
+}
+
+.detail_wrap > div > ul li {
+    margin-top: 15px;
+}
+
+.detail_wrap > div > ul li span,
+.border_country p span {
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.border_country {
+    margin-top: 100px;
+}
+
+.border_country p {
+    display: flex;
+    align-items: center;
+}
+
+.border_country p span {
+    margin-right: 10px;
+}
+
+.border_country ul li{
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 13px;
+    text-align: center;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    margin-right: 5px;
+}
+
+.back {
+    max-width: calc(1440px - 120px);
+    margin: 0 auto;
+    padding: 0 60px;
+}
+
+.back button {
+    border: none;
+    background-color: inherit;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    height: 45px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 50px;
+    cursor: pointer;
 }
 
