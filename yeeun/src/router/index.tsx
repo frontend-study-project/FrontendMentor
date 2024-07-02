@@ -12,7 +12,7 @@ const router = createBrowserRouter([
         element: <Main />,
       },
       {
-        path: '/:cca2',
+        path: '/:cca3',
         element: <Detail />,
       },
     ],
