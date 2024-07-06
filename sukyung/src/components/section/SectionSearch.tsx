@@ -33,7 +33,7 @@ export default function SectionSearch() {
               after: result.result_url,
             },
           ])
-          // if (!result.ok) throw new Error('Something wrong')
+          if (!result.ok) throw new Error('Something wrong')
         })
         .then(() => {
           if (linkRef.current) {
