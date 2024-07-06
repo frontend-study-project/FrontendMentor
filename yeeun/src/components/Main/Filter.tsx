@@ -1,7 +1,11 @@
+import Box from '../../styles/Box';
+
 const Filter = () => {
   return (
     <form>
-      <button>Filter by Region</button>
+      <Box variant="filter">
+        <button>Filter by Region</button>
+      </Box>
     </form>
   );
 };
