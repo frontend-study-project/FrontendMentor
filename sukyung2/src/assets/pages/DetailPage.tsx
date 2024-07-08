@@ -1,3 +1,9 @@
+import Wrapper from '../layout/Wrapper';
+
 export default function DetailPage() {
-  return <div>상세페이지</div>;
+  return (
+    <Wrapper>
+      <p>상세</p>
+    </Wrapper>
+  );
 }
