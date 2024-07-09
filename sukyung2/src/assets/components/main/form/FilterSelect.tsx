@@ -6,11 +6,15 @@ interface Props {
 
 export default function FilterSelect({ id, name, optionList }: Props) {
   return (
-    <div>
-      <label htmlFor={id} className="screen_out"></label>
+    <div className="px-[20px] py-[15px] rounded-[5px] shadow-md bg-white">
+      <label htmlFor={id} className="screen_out">
+        select region
+      </label>
       <select name={name} id={id}>
         {optionList.map((option) => (
-          <option value={option}>{option}</option>
+          <option key={option} value={option}>
+            {option}
+          </option>
         ))}
       </select>
     </div>
