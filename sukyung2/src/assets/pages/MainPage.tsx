@@ -8,6 +8,7 @@ const optionList = ['Filter by Region', 'Africa', 'America'];
 export default function MainPage() {
   return (
     <Wrapper>
+      <h2 className="screen_out">메인 페이지</h2>
       <div className="flex justify-between pt-[45px]">
         <SearchInput />
         <FilterSelect id="filterRegion" name="region" optionList={optionList} />

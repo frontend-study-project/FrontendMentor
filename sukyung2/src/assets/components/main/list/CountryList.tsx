@@ -8,7 +8,7 @@ export default function CountryList() {
         {Array.from({ length: 16 }).map((_, idx) => (
           <li
             key={`country${idx}`}
-            className={`${idx % 4 === 0 ? '' : 'ml-[75px]'} mt-[70px] rounded-[10px] shadow-md`}
+            className={`mt-[70px] mr-[75px] rounded-[10px] shadow-md`}
           >
             <Link
               to={'/'}

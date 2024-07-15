@@ -3,7 +3,7 @@ import MoonIcon from '../components/icons/moon';
 
 export default function Header() {
   return (
-    <header className="flex justify-between items-center h-[80px] px-[80px] shadow-lg">
+    <header className="fixed z-10 left-0 top-0 w-full flex justify-between items-center h-[80px] px-[80px] shadow-lg bg-white">
       <h1 className="text-[25px] font-extrabold">
         <Link to="/" className="block">
           Where in the world?
