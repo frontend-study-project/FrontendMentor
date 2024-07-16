@@ -9,7 +9,7 @@ export default function MainPage() {
   return (
     <Wrapper>
       <h2 className="screen_out">메인 페이지</h2>
-      <div className="flex justify-between pt-[45px]">
+      <div className="flex justify-between py-[45px]">
         <SearchInput />
         <FilterSelect id="filterRegion" name="region" optionList={optionList} />
       </div>
