@@ -9,9 +9,9 @@ export default function DetailPage() {
   return (
     <Wrapper>
       <div className="h-[100vh]">
-        <h2 className="screen_out">{params.countryId} 상세 페이지</h2>
+        <h2 className="screen_out">{params.country} 상세 페이지</h2>
         <UtilButtonBox />
-        <DetailContent />
+        <DetailContent country={params.country} />
       </div>
     </Wrapper>
   );

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import { useAllData } from '../../../hooks/useData';
+import { useCountriesData } from '../../../hooks/useData';
 
 export default function CountryList() {
-  const { data, isLoading } = useAllData();
+  const { data, isLoading } = useCountriesData();
   console.log(data);
   if (isLoading) {
     return <p>Loading...</p>;

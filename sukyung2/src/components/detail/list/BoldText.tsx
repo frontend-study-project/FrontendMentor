@@ -1,9 +1,13 @@
 import { PropsWithChildren } from 'react';
 
-export default function BoldText({ children }: PropsWithChildren) {
+interface Props extends PropsWithChildren {
+  bold: string;
+}
+export default function BoldText({ bold, children }: Props) {
   return (
     <li className="w-[50%] pb-[15px] text-[16px]">
-      <span className="font-semibold">{children}</span>
+      <span className="font-semibold">{bold}</span>
+      {children}
     </li>
   );
 }

@@ -1,11 +1,16 @@
 import ShadowBox from './ShadowBox';
 import BoldText from './BoldText';
+import { useCountryData } from '../../../hooks/useData';
 
-export default function DetailContent() {
+export default function DetailContent({ country }) {
+  const { data, isLoading } = useCountryData(country);
+  console.log(country, data);
+  if (isLoading) return <div>Loa</div>;
+
   return (
     <div className="flex items-center">
       <img
-        src=""
+        src={data.flags.png}
         alt=""
         width={560}
         height={400}
@@ -16,14 +21,20 @@ export default function DetailContent() {
           country
         </strong>
         <ul className="flex flex-col flex-wrap w-full h-[160px]">
-          <BoldText>Native Name:</BoldText>
-          <BoldText>Population:</BoldText>
-          <BoldText>Region:</BoldText>
-          <BoldText>Sub Region:</BoldText>
-          <BoldText>Capital:</BoldText>
-          <BoldText>Top Level Domain:</BoldText>
-          <BoldText>Currencies:</BoldText>
-          <BoldText>Languages:</BoldText>
+          <BoldText bold="Native Name: "></BoldText>
+          <BoldText bold="Population: ">
+            <span>{data.population}</span>
+          </BoldText>
+          <BoldText bold="Region: ">{data.region}</BoldText>
+          <BoldText bold="Sub Region: ">{data.subregion}</BoldText>
+          <BoldText bold="Capital: ">{data.capital}</BoldText>
+          <BoldText bold="Top Level Domain: ">{data.tld}</BoldText>
+          {/*<BoldText bold="Currencies: ">{data.currencies}</BoldText>*/}
+          <BoldText bold="Languages: ">
+            {Object.values(data.languages).map((language) => {
+              console.log(language);
+            })}
+          </BoldText>
         </ul>
         <div>
           <strong className="mr-[15px] font-semibold text-[16px]">

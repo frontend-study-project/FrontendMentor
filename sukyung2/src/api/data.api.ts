@@ -1,10 +1,13 @@
-const url = new URL('https://restcountries.com/v3.1/all');
+const baseUrl = 'https://restcountries.com/v3.1';
 
-export function getCardData() {
-  url.searchParams.append('field', 'flags,name,population,region,capital');
-  console.log(url);
+export function getCountriesData() {
+  const allUrl = new URL(`${baseUrl}/all/`);
+  allUrl.searchParams.append(
+    'fields',
+    'cca2,flags,name,population,region,capital'
+  );
 
-  return fetch(url.toString())
+  return fetch(allUrl.toString())
     .then((res) => {
       if (!res.ok) {
         throw new Error('Failed to fetch all countries data');
@@ -12,4 +15,19 @@ export function getCardData() {
       return res.json();
     })
     .then((data) => data);
+}
+
+export async function getCountryData(name) {
+  const detailUrl = new URL(`${baseUrl}/name/${name}`);
+  detailUrl.searchParams.append(
+    'fields',
+    'cca2,flags,name,population,region,subregion,capital,tld,currencies,languages'
+  );
+
+  const response = await fetch(detailUrl.toString());
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch country data');
+  }
+  return response.json();
 }
