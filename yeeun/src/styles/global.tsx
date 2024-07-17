@@ -10,6 +10,9 @@ export const globalStyles = css`
     color: #171311;
     background: #fafafa;
   }
+  body * {
+    box-sizing: border-box;
+  }
   body,
   div,
   h1,
