@@ -4,8 +4,8 @@ import { useCountryData } from '../../../hooks/useData';
 
 export default function DetailContent({ country }) {
   const { data, isLoading } = useCountryData(country);
-  console.log(country, data);
-  if (isLoading) return <div>Loa</div>;
+
+  if (isLoading) return <div>{country} Loading...</div>;
 
   return (
     <div className="flex items-center">

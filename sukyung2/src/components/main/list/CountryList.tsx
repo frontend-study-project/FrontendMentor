@@ -1,21 +1,36 @@
 import { Link } from 'react-router-dom';
 import { useCountriesData } from '../../../hooks/useData';
+import SearchInput from '../form/SearchInput';
+import FilterSelect from '../form/FilterSelect';
+import { useState } from 'react';
+
+const optionList = ['Filter by Region', 'Africa', 'America'];
 
 export default function CountryList() {
   const { data, isLoading } = useCountriesData();
-  console.log(data);
+  const [listedData, setListedData] = useState(data || []);
+
   if (isLoading) {
     return <p>Loading...</p>;
   }
+
+  const onFilter = (inputValue: string) => {
+    setListedData(inputValue);
+  };
+
   return (
     <>
+      <div className="flex justify-between py-[45px]">
+        <SearchInput onFilter={onFilter} />
+        <FilterSelect id="filterRegion" name="region" optionList={optionList} />
+      </div>
       <strong className="screen_out">country list</strong>
       <ul className="flex flex-wrap justify-between gap-[75px]">
-        {data?.map((item) => (
+        {listedData.map((item) => (
           <li key={item.cca2} className={`mt-[70px] rounded-[10px] shadow-md`}>
             <Link
               to={`/detail/${item.name.official}`}
-              className="overflow-hidden block w-[254px] rounded-[10px]"
+              className="overflow-hidden block w-[264px] rounded-[10px]"
             >
               <img src={item.flags.png} alt="" className="w-full h-[160px]" />
               <div className="p-[25px]">

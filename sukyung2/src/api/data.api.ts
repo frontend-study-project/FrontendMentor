@@ -1,6 +1,6 @@
 const baseUrl = 'https://restcountries.com/v3.1';
 
-export function getCountriesData() {
+export function getCountries() {
   const allUrl = new URL(`${baseUrl}/all/`);
   allUrl.searchParams.append(
     'fields',
@@ -17,7 +17,7 @@ export function getCountriesData() {
     .then((data) => data);
 }
 
-export async function getCountryData(name) {
+export async function getCountry(name: string) {
   const detailUrl = new URL(`${baseUrl}/name/${name}`);
   detailUrl.searchParams.append(
     'fields',
