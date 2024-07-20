@@ -1,17 +1,30 @@
-interface Props {
-  id: string;
-  name: string;
-  optionList: string[];
-}
+import { useEffect, useRef, useState } from 'react';
 
-export default function FilterSelect({ id, name, optionList }: Props) {
+export default function FilterSelect({ countries }) {
+  const [optionList, setOptionList] = useState(new Set(['Filter By Region']));
+  const isInitialMount = useRef(true);
+
+  useEffect(() => {
+    if (isInitialMount.current && countries) {
+      setOptionList((prev) => {
+        const newSet = new Set(prev);
+        countries.forEach((country) => {
+          newSet.add(country.region);
+        });
+        return newSet;
+      });
+
+      isInitialMount.current = false;
+    }
+  }, [countries]);
+  console.log(optionList);
   return (
     <div className="px-[20px] py-[15px] rounded-[5px] shadow-md bg-white">
-      <label htmlFor={id} className="screen_out">
+      <label htmlFor="filterRegion" className="screen_out">
         select region
       </label>
-      <select name={name} id={id}>
-        {optionList.map((option) => (
+      <select name="region" id="filterRegion">
+        {[...optionList].map((option) => (
           <option key={option} value={option}>
             {option}
           </option>

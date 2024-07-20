@@ -19,7 +19,7 @@ export async function getCountry(name: string) {
   const detailUrl = new URL(`${baseUrl}/name/${name}`);
   detailUrl.searchParams.append(
     'fields',
-    'cca2,flags,name,population,region,subregion,capital,tld,currencies,languages'
+    'cca2,flags,name,population,region,subregion,capital,tld,currencies,languages,borders'
   );
 
   const response = await fetch(detailUrl.toString());

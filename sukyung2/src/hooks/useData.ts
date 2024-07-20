@@ -1,4 +1,4 @@
-import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import { getCountries, getCountry } from '../api/data.api';
 
 export function useCountriesData(key: string) {

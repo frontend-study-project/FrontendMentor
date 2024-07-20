@@ -8,7 +8,7 @@ export default function CountryList({ countries, isLoading }) {
   return (
     <>
       <strong className="screen_out">country list</strong>
-      <ul className="flex flex-wrap justify-between gap-[75px]">
+      <ul className="flex flex-wrap gap-[75px]">
         {countries.map((item) => (
           <li key={item.cca2} className={`mt-[70px] rounded-[10px] shadow-md`}>
             <Link
