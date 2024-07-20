@@ -1,16 +1,9 @@
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent } from 'react';
 import SearchIcon from '../../icons/search';
-import { useFilterCountries } from '../../../hooks/useData';
 
-export default function SearchInput({ onFilter }) {
-  const [searchCountryInput, setSearchCounntryInput] = useState('');
-
-  const data = useFilterCountries(searchCountryInput);
-
+export default function SearchInput({ searchParams, setSearchParams }) {
   const handleSearchCountryChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const inpValue = event.target.value;
-    setSearchCounntryInput(inpValue);
-    onFilter(data);
+    setSearchParams(event.target.value);
   };
 
   return (
@@ -23,7 +16,7 @@ export default function SearchInput({ onFilter }) {
         className="grow"
         type="text"
         placeholder="Search for a country..."
-        value={searchCountryInput}
+        value={searchParams}
         onChange={handleSearchCountryChange}
       />
     </form>

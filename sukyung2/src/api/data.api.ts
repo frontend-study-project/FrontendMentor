@@ -1,20 +1,18 @@
 const baseUrl = 'https://restcountries.com/v3.1';
 
-export function getCountries() {
+export async function getCountries() {
   const allUrl = new URL(`${baseUrl}/all/`);
   allUrl.searchParams.append(
     'fields',
     'cca2,flags,name,population,region,capital'
   );
 
-  return fetch(allUrl.toString())
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error('Failed to fetch all countries data');
-      }
-      return res.json();
-    })
-    .then((data) => data);
+  const response = await fetch(allUrl.toString());
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch all countries data');
+  }
+  return response.json();
 }
 
 export async function getCountry(name: string) {

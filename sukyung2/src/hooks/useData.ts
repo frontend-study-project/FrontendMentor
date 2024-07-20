@@ -1,11 +1,22 @@
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { getCountries, getCountry } from '../api/data.api';
-import { Card } from '../types/data';
 
-export function useCountriesData() {
+export function useCountriesData(key: string) {
   return useQuery({
-    queryKey: ['all'],
-    queryFn: () => getCountries(),
+    queryKey: ['all', key],
+    queryFn: async () => {
+      const countries = await getCountries();
+
+      if (key === '') {
+        return countries;
+      }
+
+      const filteredCountries = countries.filter((country: string) =>
+        country.name.official.toLowerCase().includes(key)
+      );
+
+      return filteredCountries;
+    },
   });
 }
 
@@ -18,24 +29,4 @@ export function useCountryData(name: string) {
       return data[0];
     },
   });
-}
-
-export function useFilterCountries(inputValue: string) {
-  const queryClient = useQueryClient();
-  const originCountries = queryClient.getQueryData(['all']);
-
-  return originCountries.filter((country) =>
-    country.name.official.toLowerCase().replace(/\s+/g, '').includes(inputValue)
-  );
-
-  // const filteredCountries = originCountries.filter((country) => {
-  //   const filterString = country.name.official
-  //     .toLowerCase()
-  //     .replace(/\s+/g, '');
-  //   const inputString = inputValue.toString().replace(/\s+/g, '');
-
-  //   return filterString === inputString;
-  // });
-
-  // queryClient.setQueryData(['all'], filteredCountries);
 }
