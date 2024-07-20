@@ -1,9 +1,17 @@
 import { ChangeEvent } from 'react';
 import SearchIcon from '../../icons/search';
 
-export default function SearchInput({ searchParams, setSearchParams }) {
+export default function SearchInput({
+  searchInput,
+  setSearchInput,
+  filterSelect,
+}) {
   const handleSearchCountryChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setSearchParams(event.target.value);
+    if (filterSelect !== 'Filter By Region') {
+      setSearchInput('');
+      alert('Please reset the region selection first.');
+    }
+    setSearchInput(event.target.value);
   };
 
   return (
@@ -16,7 +24,7 @@ export default function SearchInput({ searchParams, setSearchParams }) {
         className="grow"
         type="text"
         placeholder="Search for a country..."
-        value={searchParams}
+        value={searchInput}
         onChange={handleSearchCountryChange}
       />
     </form>

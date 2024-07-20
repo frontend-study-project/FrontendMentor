@@ -1,6 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 
-export default function FilterSelect({ countries }) {
+export default function FilterSelect({
+  countries,
+  setFilterSelect,
+  setSearchInput,
+}) {
   const [optionList, setOptionList] = useState(new Set(['Filter By Region']));
   const isInitialMount = useRef(true);
 
@@ -13,17 +17,24 @@ export default function FilterSelect({ countries }) {
         });
         return newSet;
       });
-
       isInitialMount.current = false;
     }
   }, [countries]);
-  console.log(optionList);
+
+  const handleFilterOptionClick = (event) => {
+    setFilterSelect(event.target.value);
+    setSearchInput('');
+  };
   return (
     <div className="px-[20px] py-[15px] rounded-[5px] shadow-md bg-white">
       <label htmlFor="filterRegion" className="screen_out">
         select region
       </label>
-      <select name="region" id="filterRegion">
+      <select
+        name="region"
+        id="filterRegion"
+        onChange={handleFilterOptionClick}
+      >
         {[...optionList].map((option) => (
           <option key={option} value={option}>
             {option}

@@ -1,21 +1,27 @@
-import { useQuery } from '@tanstack/react-query';
+import { QueryClient, useQuery } from '@tanstack/react-query';
 import { getCountries, getCountry } from '../api/data.api';
 
-export function useCountriesData(key: string) {
+export const queryClient = new QueryClient();
+
+export function useCountriesData(inputKey: string, regionKey: string) {
   return useQuery({
-    queryKey: ['all', key],
+    queryKey: ['all', { filterInput: inputKey }, { filterRegion: regionKey }],
     queryFn: async () => {
       const countries = await getCountries();
 
-      if (key === '') {
+      if (regionKey !== 'Filter By Region') {
+        return countries.filter((country) =>
+          country.region.includes(regionKey)
+        );
+      }
+
+      if (inputKey === '') {
         return countries;
       }
 
-      const filteredCountries = countries.filter((country: string) =>
-        country.name.official.toLowerCase().includes(key)
+      return countries.filter((country) =>
+        country.name.official.toLowerCase().includes(inputKey)
       );
-
-      return filteredCountries;
     },
   });
 }
@@ -30,3 +36,25 @@ export function useCountryData(name: string) {
     },
   });
 }
+
+// export async function useFilteredCountries(type: string, key: string) {
+//   return useQuery({
+//     queryKey: ['filter', type, key],
+//     queryFn: async () => {
+//       const originCountries = await queryClient.getQueryData(['all']);
+//       let filteredCountries;
+
+//       if (type === 'region') {
+//         filteredCountries = originCountries.filter(
+//           (country) => country.name.official === key
+//         );
+//       } else {
+//         filteredCountries = originCountries.filter(
+//           (country) => country.region === key
+//         );
+//       }
+
+//       return filteredCountries;
+//     },
+//   });
+// }
