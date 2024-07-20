@@ -26,7 +26,7 @@ export default function FilterSelect({
     setSearchInput('');
   };
   return (
-    <div className="px-[20px] py-[15px] rounded-[5px] shadow-md bg-white">
+    <div className="max-h-[54px] px-[20px] py-[15px] rounded-[5px] shadow-md bg-white">
       <label htmlFor="filterRegion" className="screen_out">
         select region
       </label>
