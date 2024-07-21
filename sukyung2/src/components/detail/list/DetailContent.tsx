@@ -28,7 +28,9 @@ export default function DetailContent({ country }) {
             <span>{data.population.toLocaleString()}</span>
           </BoldText>
           <BoldText bold="Region: ">{data.region}</BoldText>
-          <BoldText bold="Sub Region: ">{data.subregion}</BoldText>
+          {data.subregion && (
+            <BoldText bold="Sub Region: ">{data.subregion}</BoldText>
+          )}
           <BoldText bold="Capital: ">{data.capital}</BoldText>
           <BoldText bold="Top Level Domain: ">{data.tld}</BoldText>
           <BoldText bold="Currencies: ">
