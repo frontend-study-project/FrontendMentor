@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import classes from './SectionSearch.module.css';
 import ShortenResults from '../list/ShortenResults';
 import Spinner from '../Spinner';
@@ -17,13 +17,25 @@ export default function SectionSearch() {
   const { mutate: createShorten, isPending } = useMutation({
     mutationFn: postShortenAPI,
     onSuccess: (data) => {
-      setLinkList((prevList) => [...prevList, { url: inputValue, result_url: data.result_url }]);
+      const newLink = { url: inputValue, result_url: data.result_url }
+      const updatedLinkList = [...linkList, newLink]
+      setLinkList(updatedLinkList);
+      localStorage.setItem('linkList', JSON.stringify(updatedLinkList))
       setInputValue("")
     },
     onError: (error) => {
       console.error('Error creating shortened link:', error);
     },
   });
+
+  // 로컬스토리지에 저장
+  useEffect(() => {
+    // 컴포넌트 마운트 시 로컬 스토리지에서 링크 리스트 불러오기
+    const savedLinkList = localStorage.getItem('linkList');
+    if (savedLinkList) {
+      setLinkList(JSON.parse(savedLinkList));
+    }
+  }, []);
 
 
   const handleLinkSubmit = (e: React.FormEvent) => {
@@ -55,6 +67,7 @@ export default function SectionSearch() {
               <button type="submit" className="btn_bg">Shorten It!</button>
             </div>
           </form>
+          {inputValue === "" && (<p className={classes.txt_alert}>Please add a link</p>)}
         </div>
         {isPending && <Spinner />}
         <ShortenResults linkList={linkList} />
