@@ -19,7 +19,6 @@ export default function Header() {
     }
   }, [isDarkMode]);
 
-  console.log(isDarkMode);
   return (
     <header className="fixed z-10 left-0 top-0 w-full flex justify-between items-center h-[80px] px-[80px] md:px-[20px] shadow-lg bg-white dark:bg-dark-blue">
       <h1 className="text-[25px] md:text-[18px] font-extrabold dark:text-white">
