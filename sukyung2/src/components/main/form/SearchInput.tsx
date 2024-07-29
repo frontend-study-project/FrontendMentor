@@ -25,13 +25,13 @@ export default function SearchInput({
 
   return (
     <div>
-      <form className="flex w-full max-w-[480px] px-[30px] py-[15px] rounded-[5px] shadow-md bg-white">
+      <form className="flex w-full max-w-[480px] px-[30px] py-[15px] rounded-[5px] shadow-md bg-white dark:bg-dark-blue">
         <label htmlFor="country" className="mr-[18px]">
           <SearchIcon color="hsl(0, 0%, 52%)" />
         </label>
         <input
           id="country"
-          className="grow"
+          className="grow dark:bg-dark-blue dark:text-very-light-gray"
           type="text"
           placeholder="Search for a country..."
           value={searchInput}

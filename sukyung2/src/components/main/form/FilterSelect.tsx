@@ -26,7 +26,7 @@ export default function FilterSelect({
     setSearchInput('');
   };
   return (
-    <div className="max-h-[54px] px-[20px] py-[15px] rounded-[5px] shadow-md bg-white">
+    <div className="max-h-[54px] px-[20px] py-[15px] rounded-[5px] shadow-md bg-white dark:bg-dark-blue dark:text-very-light-gray">
       <label htmlFor="filterRegion" className="screen_out">
         select region
       </label>
@@ -34,6 +34,7 @@ export default function FilterSelect({
         name="region"
         id="filterRegion"
         onChange={handleFilterOptionClick}
+        className="dark:bg-dark-blue"
       >
         {[...optionList].map((option) => (
           <option key={option} value={option}>

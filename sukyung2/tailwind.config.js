@@ -16,6 +16,7 @@ export default {
       white: 'hsl(0, 0%, 100%)',
     },
   },
+  darkMode: 'selector',
   plugins: [],
   mode: 'jit',
 };

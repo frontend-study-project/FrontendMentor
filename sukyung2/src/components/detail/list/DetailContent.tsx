@@ -8,7 +8,7 @@ export default function DetailContent({ country }) {
   if (isLoading) return <div>{country} Loading...</div>;
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center dark:text-white">
       <img
         src={data.flags.png}
         alt={data.flags.alt}

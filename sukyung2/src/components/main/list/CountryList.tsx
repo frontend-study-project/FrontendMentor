@@ -8,9 +8,12 @@ export default function CountryList({ countries, isLoading }) {
   return (
     <>
       <strong className="screen_out">country list</strong>
-      <ul className="flex flex-wrap gap-[75px]">
+      <ul className="flex flex-wrap justify-between gap-[75px]">
         {countries.map((item) => (
-          <li key={item.cca2} className={`mt-[70px] rounded-[10px] shadow-md`}>
+          <li
+            key={item.cca2}
+            className={`mt-[70px] rounded-[10px] shadow-md dark:bg-dark-blue dark:text-very-light-gray`}
+          >
             <Link
               to={`/detail/${item.name.official}`}
               className="overflow-hidden block w-[264px] rounded-[10px]"

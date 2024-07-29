@@ -12,8 +12,6 @@ export default function MainPage() {
     searchInput,
     filterSelect
   );
-  console.log(filterSelect);
-  console.log(countries);
 
   return (
     <Wrapper>
