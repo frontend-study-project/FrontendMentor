@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon } from '@fortawesome/free-regular-svg-icons';
+import { faMoon } from '@fortawesome/free-regular-assets-icons';
 
 const Header = () => {
   return (
