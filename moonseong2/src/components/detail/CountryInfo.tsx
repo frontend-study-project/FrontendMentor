@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeft } from '@fortawesome/free-solid-assets-icons'
 
 import { useNavigate, useParams } from "react-router-dom";
 import { useFetchCountry } from "../../hooks/useCountry";

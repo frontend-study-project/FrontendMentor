@@ -1,0 +1,25 @@
+.inner_cont {
+  width: 100%;
+  max-width: 1440px;
+  min-width: 375px;
+  margin: 0 auto;
+  padding: 0 50px;
+  box-sizing: border-box;
+}
+.screen_out {
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  text-indent: -9999px;
+}
+.btn_bg {
+  padding: 8px 15px;
+  background-color: var(--color-cyan);
+  border-radius: 15px;
+  color: #fff;
+}
+.btn_bg:hover {
+  background-color: #9be3e2;
+}
