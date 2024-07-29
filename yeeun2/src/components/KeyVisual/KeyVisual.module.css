@@ -1,0 +1,42 @@
+.keyvisual {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 20px;
+  background: #fff;
+}
+.keyvisual::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  width: 733px;
+  height: 482px;
+  background: url('../../assets/illustration-working.svg') no-repeat center /
+    cover;
+  pointer-events: none;
+}
+
+.keyvisual h2 {
+  font-size: 60px;
+}
+.keyvisual p {
+  color: var(--neutral-grayish-violet);
+}
+.keyvisual button {
+  display: block;
+  margin-top: 2em;
+  padding: 0.7em 2em;
+  background-color: var(--main-cyan);
+  color: #fff;
+  border-radius: 25px;
+}
+
+.keyvisual button:hover {
+  opacity: 0.7;
+}

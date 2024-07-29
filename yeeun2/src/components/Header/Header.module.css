@@ -1,0 +1,44 @@
+/* color: var(--main-cyan); */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  z-index: 100;
+}
+.header_wrap {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+.utils {
+  display: flex;
+  gap: 1em;
+}
+.auth {
+  display: flex;
+  gap: 5px;
+}
+.auth a {
+  padding: 0.3em 2em;
+  border-radius: 20px;
+}
+.utils a,
+.auth a {
+  transition: all 0.25s;
+}
+
+.utils a:hover {
+  color: var(--neutral-grayish-violet);
+}
+
+.auth a:hover {
+  background-color: var(--main-cyan);
+
+  color: #fff;
+}

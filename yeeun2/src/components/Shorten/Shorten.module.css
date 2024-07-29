@@ -1,0 +1,14 @@
+.shorten {
+  position: relative;
+  padding: 0 20px;
+}
+.shorten::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 84px;
+  background-color: #fff;
+}

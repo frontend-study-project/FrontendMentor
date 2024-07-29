@@ -1,0 +1,25 @@
+.result_box {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-top: 1em;
+  padding: 1em;
+  background-color: #fff;
+  color: var(--neutral-dark-violet);
+  border-radius: 10px;
+}
+.result_box_wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+}
+.result_url {
+  color: var(--main-cyan);
+}
+.result_box button {
+  padding: 0 2em;
+  border-radius: 5px;
+  background-color: var(--main-cyan);
+  height: 40px;
+}
