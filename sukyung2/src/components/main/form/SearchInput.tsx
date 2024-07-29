@@ -25,7 +25,7 @@ export default function SearchInput({
 
   return (
     <div>
-      <form className="flex w-full max-w-[480px] px-[30px] py-[15px] rounded-[5px] shadow-md bg-white dark:bg-dark-blue">
+      <form className="flex w-full max-w-[480px] md:max-w-full md:w-full px-[30px] py-[15px] rounded-[5px] shadow-md bg-white dark:bg-dark-blue">
         <label htmlFor="country" className="mr-[18px]">
           <SearchIcon color="hsl(0, 0%, 52%)" />
         </label>
@@ -38,7 +38,7 @@ export default function SearchInput({
           onChange={handleSearchCountryChange}
         />
       </form>
-      <p className="pt-[10px] text-[#ff0000]">{error}</p>
+      {error && <p className="pt-[10px] text-[#ff0000]">{error}</p>}
     </div>
   );
 }

@@ -8,7 +8,7 @@ export default function DetailPage() {
 
   return (
     <Wrapper>
-      <div className="h-[100vh]">
+      <div className="h-[100vh] px-[40px] md:px-[55px]">
         <h2 className="screen_out">{params.country} 상세 페이지</h2>
         <UtilButtonBox />
         <DetailContent country={params.country} />

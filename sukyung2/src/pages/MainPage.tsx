@@ -16,19 +16,21 @@ export default function MainPage() {
   return (
     <Wrapper>
       <h2 className="screen_out">메인 페이지</h2>
-      <div className="flex justify-between py-[45px]">
-        <SearchInput
-          searchInput={searchInput}
-          setSearchInput={setSearchInput}
-          filterSelect={filterSelect}
-        />
-        <FilterSelect
-          countries={countries}
-          setFilterSelect={setFilterSelect}
-          setSearchInput={setSearchInput}
-        />
+      <div className="px-[40px] md:px-[70px]">
+        <div className="flex md:block justify-between py-[45px] md:pb-0">
+          <SearchInput
+            searchInput={searchInput}
+            setSearchInput={setSearchInput}
+            filterSelect={filterSelect}
+          />
+          <FilterSelect
+            countries={countries}
+            setFilterSelect={setFilterSelect}
+            setSearchInput={setSearchInput}
+          />
+        </div>
+        <CountryList countries={countries} isLoading={isLoading} />
       </div>
-      <CountryList countries={countries} isLoading={isLoading} />
     </Wrapper>
   );
 }

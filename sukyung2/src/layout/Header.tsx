@@ -21,15 +21,15 @@ export default function Header() {
 
   console.log(isDarkMode);
   return (
-    <header className="fixed z-10 left-0 top-0 w-full flex justify-between items-center h-[80px] px-[80px] shadow-lg bg-white dark:bg-dark-blue">
-      <h1 className="text-[25px] font-extrabold dark:text-white">
+    <header className="fixed z-10 left-0 top-0 w-full flex justify-between items-center h-[80px] px-[80px] md:px-[20px] shadow-lg bg-white dark:bg-dark-blue">
+      <h1 className="text-[25px] md:text-[18px] font-extrabold dark:text-white">
         <Link to="/" className="block">
           Where in the world?
         </Link>
       </h1>
       <button
         type="button"
-        className="flex items-center font-semibold dark:text-white"
+        className="flex items-center font-semibold dark:text-white md:text-[14px]"
         onClick={handleClickDarkMode}
       >
         <span className="mr-[5px]">

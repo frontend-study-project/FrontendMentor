@@ -5,7 +5,7 @@ interface Props extends PropsWithChildren {
 }
 export default function BoldText({ bold, children }: Props) {
   return (
-    <li className="w-[50%] pb-[15px] text-[16px]">
+    <li className="w-full pb-[15px] text-[16px]">
       <span className="font-semibold">{bold}</span>
       {children}
     </li>
