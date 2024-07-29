@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import useApiQuery from '../../hooks/useApi';
 import Filter from './Filter';
 import List from './List';
@@ -5,6 +6,11 @@ import Search from './Search';
 
 const Main = () => {
   const { data } = useApiQuery();
+  const [countryData, setCountryData] = useState('');
+  const searchData = data?.filter((c) =>
+    c.name.common.toLowerCase().includes(countryData)
+  );
+  console.log(searchData);
 
   return (
     <div
@@ -23,10 +29,10 @@ const Main = () => {
           paddingBottom: '40px',
         }}
       >
-        <Search />
+        <Search setCountryData={setCountryData} />
         <Filter />
       </div>
-      <List data={data} />
+      <List data={searchData} />
     </div>
   );
 };
