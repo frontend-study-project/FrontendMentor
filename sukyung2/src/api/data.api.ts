@@ -2,7 +2,7 @@ import { Card, Detail } from '../types/data';
 
 const baseUrl = 'https://restcountries.com/v3.1';
 
-export async function getCountries(): Promise<Card> {
+export async function getCountries(): Promise<Card[]> {
   const allUrl = new URL(`${baseUrl}/all/`);
   allUrl.searchParams.append(
     'fields',
@@ -17,7 +17,7 @@ export async function getCountries(): Promise<Card> {
   return response.json();
 }
 
-export async function getCountry(name: string): Promise<Detail> {
+export async function getCountry(name: string): Promise<Detail[]> {
   const detailUrl = new URL(`${baseUrl}/name/${name}`);
   detailUrl.searchParams.append(
     'fields',
