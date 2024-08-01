@@ -3,7 +3,6 @@ import FilterSelect from '../components/main/form/FilterSelect';
 import SearchInput from '../components/main/form/SearchInput';
 import CountryList from '../components/main/list/CountryList';
 import { useCountriesData } from '../hooks/useData';
-import Wrapper from '../layout/Wrapper';
 
 export default function MainPage() {
   const [searchInput, setSearchInput] = useState('');
@@ -14,7 +13,7 @@ export default function MainPage() {
   );
 
   return (
-    <Wrapper>
+    <>
       <h2 className="screen_out">메인 페이지</h2>
       <div className="px-[40px] md:px-[70px]">
         <div className="flex md:block justify-between py-[45px] md:pb-0">
@@ -31,6 +30,6 @@ export default function MainPage() {
         </div>
         <CountryList countries={countries} isLoading={isLoading} />
       </div>
-    </Wrapper>
+    </>
   );
 }

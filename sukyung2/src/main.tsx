@@ -5,17 +5,23 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import MainPage from './pages/MainPage.tsx';
 import DetailPage from './pages/DetailPage.tsx';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import Layout from './layout/Layout.tsx';
 
 const queryClient = new QueryClient();
 
 const router = createBrowserRouter([
   {
-    path: '/',
-    element: <MainPage />,
-  },
-  {
-    path: '/detail/:country',
-    element: <DetailPage />,
+    element: <Layout />,
+    children: [
+      {
+        path: '/',
+        element: <MainPage />,
+      },
+      {
+        path: '/detail/:country',
+        element: <DetailPage />,
+      },
+    ],
   },
 ]);
 
